@@ -26,4 +26,9 @@ public class ImageGalleryActivity extends AppCompatActivity{
         super.onPause();
         //stage dev
     }
+
+    protected void onDestory() {
+
+        //add on v2.0
+    }
 }
