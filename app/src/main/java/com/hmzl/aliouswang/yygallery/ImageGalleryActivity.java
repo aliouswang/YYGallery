@@ -20,5 +20,6 @@ public class ImageGalleryActivity extends AppCompatActivity{
     protected void onResume() {
         super.onResume();
         //fixed issue 101
+        //fixed issue 101   22
     }
 }
