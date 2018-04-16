@@ -22,4 +22,8 @@ public class ImageGalleryActivity extends AppCompatActivity{
         //fixed issue 101
         //fixed issue 101   22
     }
+    protected void onPause() {
+        super.onPause();
+        //stage dev
+    }
 }
