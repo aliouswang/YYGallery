@@ -6,11 +6,10 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView img_share;
+    private ScaleImageView img_share;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +22,28 @@ public class MainActivity extends AppCompatActivity {
         btn_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShareActivity.class);
-                startActivity(intent,
-                        ActivityOptionsCompat.makeSceneTransitionAnimation(
-                                MainActivity.this, img_share, "share"
-                        ).toBundle());
+                //gotoShare();
+            gotoImageScale();
             }
         });
+    }
+
+    private void gotoImageScale() {
+        int[] location = new int[2];
+        img_share.getLocationOnScreen(location);
+        int width = img_share.getWidth();
+        int height = img_share.getHeight();
+        ImageScaleActivity.jump(this, location[0], location[1], width, height,
+                img_share.getRatio());
+        this.overridePendingTransition(0, 0);
+    }
+
+
+    private void gotoShare() {
+        Intent intent = new Intent(MainActivity.this, ShareActivity.class);
+        startActivity(intent,
+                ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        MainActivity.this, img_share, "share"
+                ).toBundle());
     }
 }

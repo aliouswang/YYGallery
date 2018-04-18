@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.hmzl.aliouswang.yygallery.MainActivity">
 
-    <ImageView
+    <com.hmzl.aliouswang.yygallery.ScaleImageView
         android:id="@+id/img_share"
         android:src="@drawable/zhao_2"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         android:transitionName="share"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="wrap_content"
+        app:siv_scale="0.6"
+        android:layout_width="120dp"
         android:layout_height="wrap_content" />
 
 
