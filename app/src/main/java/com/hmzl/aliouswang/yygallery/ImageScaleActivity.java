@@ -44,7 +44,6 @@ public class ImageScaleActivity extends Activity{
 
     private ColorDrawable mColorDrawable;
 
-
     private ScaleImageView img_mask;
 
     private int mScreenHeight;
